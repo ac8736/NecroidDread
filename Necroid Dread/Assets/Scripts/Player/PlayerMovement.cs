@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded = true;
     float checkRadius = 0.2f;
     public float crouchSpeedReduction = 0.5f;
+    [SerializeField] bool flipped = false;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Flip();
         if (movingLeft && !isCrouching)
         {
             Vector3 targetVelocity = new Vector2(runSpeed, _rigidbody.velocity.y);
@@ -75,6 +77,20 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             GetComponent<BoxCollider2D>().enabled = true;
+        }
+    }
+
+    void Flip()
+    {
+        if (movingLeft && transform.localScale.x < 0)
+        {
+            transform.localScale *= new Vector2(-1, 1);
+            flipped = true;
+        }
+        else if (movingRight && transform.localScale.x > 0)
+        {
+            transform.localScale *= new Vector2(-1, 1);
+            flipped = false;
         }
     }
 }
