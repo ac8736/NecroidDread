@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmorPickup : MonoBehaviour
+public class Engie2_16Pickup : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            other.gameObject.AddComponent<Test>();
+            other.gameObject.AddComponent<Engie2_16>();
             Destroy(gameObject);
         }
     }

@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded = true;
     float checkRadius = 0.2f;
     public float crouchSpeedReduction = 0.5f;
-    [SerializeField] bool flipped = false;
+    //[SerializeField] bool flipped = false;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -85,12 +85,12 @@ public class PlayerMovement : MonoBehaviour
         if (movingLeft && transform.localScale.x < 0)
         {
             transform.localScale *= new Vector2(-1, 1);
-            flipped = true;
+            //    flipped = true;
         }
         else if (movingRight && transform.localScale.x > 0)
         {
             transform.localScale *= new Vector2(-1, 1);
-            flipped = false;
+            //    flipped = false;
         }
     }
 }
