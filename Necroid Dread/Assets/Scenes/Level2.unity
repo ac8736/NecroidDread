@@ -1073,11 +1073,11 @@ PrefabInstance:
       objectReference: {fileID: 1935041398}
     - target: {fileID: 845943589655888757, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: runSpeed
-      value: 15
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 845943589655888757, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: jumpForce
-      value: 22
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 845943589655888758, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: shootDetection
