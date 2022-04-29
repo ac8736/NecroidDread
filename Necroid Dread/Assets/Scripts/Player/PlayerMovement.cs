@@ -7,90 +7,70 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private LayerMask platformLayerMask;
     public Transform feet;
-    public Image joystick;
-    bool movingLeft, movingRight, isJumping, isCrouching = false;
     public float runSpeed = 20f;
     private Vector3 m_Velocity = Vector3.zero;
     private float m_MovementSmoothing = .02f;
     private Rigidbody2D _rigidbody;
     public float jumpForce = 10f;
     bool isGrounded = true;
-    float checkRadius = 0.2f;
+    float checkRadius = 0.1f;
     public float crouchSpeedReduction = 0.5f;
-    //[SerializeField] bool flipped = false;
+    public Joystick joystick;
+    private float horizontalSpeed;
+    private BoxCollider2D boxCollider;
+    public Animator animator;
+    public bool flipped = false;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
     void Update()
     {
-        movingLeft = joystick.GetComponent<Joystick>().movingLeft;
-        movingRight = joystick.GetComponent<Joystick>().movingRight;
-        isJumping = joystick.GetComponent<Joystick>().isJumping;
-        isCrouching = joystick.GetComponent<Joystick>().isCrouching;
+        Flip();
         isGrounded = Physics2D.OverlapCircle(feet.position, checkRadius, platformLayerMask);
+        if (joystick.Horizontal >= 0.2f)
+        {
+            horizontalSpeed = runSpeed;
+        }
+        else if (joystick.Horizontal <= -0.2f)
+        {
+            horizontalSpeed = -runSpeed;
+        }
+        else
+        {
+            horizontalSpeed = 0;
+        }
+        animator.SetFloat("speed", Mathf.Abs(horizontalSpeed));
     }
 
     private void FixedUpdate()
     {
-        Flip();
-        if (movingLeft && !isCrouching)
-        {
-            Vector3 targetVelocity = new Vector2(runSpeed, _rigidbody.velocity.y);
+        if (joystick.Vertical <= -0.7f && isGrounded) {
+            Vector3 targetVelocity = new Vector2(horizontalSpeed * crouchSpeedReduction, _rigidbody.velocity.y);
             _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+            boxCollider.enabled = false;
+        } else {
+            Vector3 targetVelocity = new Vector2(horizontalSpeed, _rigidbody.velocity.y);
+		    _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+            boxCollider.enabled = true;
         }
-
-        if (movingRight && !isCrouching)
-        {
-            Vector3 targetVelocity = new Vector2(-runSpeed, _rigidbody.velocity.y);
-            _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-        }
-
-        if (movingLeft && isCrouching)
-        {
-            print("crouchwalking");
-            Vector3 targetVelocity = new Vector2(runSpeed * crouchSpeedReduction, _rigidbody.velocity.y);
-            _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-        }
-
-        if (movingRight && isCrouching)
-        {
-            print("crouchwalking");
-            Vector3 targetVelocity = new Vector2(-runSpeed * crouchSpeedReduction, _rigidbody.velocity.y);
-            _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-        }
-
-        if (!movingRight && !movingLeft)
-        {
-            _rigidbody.velocity = new Vector2(0, _rigidbody.velocity.y);
-        }
-
-        if (isJumping && isGrounded)
+        if (joystick.Vertical >= 0.7f && isGrounded)
         {
             _rigidbody.velocity = Vector2.up * jumpForce;
-        }
-
-        if (isCrouching && isGrounded)
-        {
-            GetComponent<BoxCollider2D>().enabled = false;
+            animator.SetBool("jump", true);
         }
         else
         {
-            GetComponent<BoxCollider2D>().enabled = true;
+            animator.SetBool("jump", false);
         }
     }
 
     void Flip()
     {
-        if (movingLeft && transform.localScale.x < 0)
-        {
-            transform.localScale *= new Vector2(-1, 1);
-            //    flipped = true;
-        }
-        else if (movingRight && transform.localScale.x > 0)
-        {
-            transform.localScale *= new Vector2(-1, 1);
-            //    flipped = false;
-        }
+        if (horizontalSpeed > 0 && transform.localScale.x < 0 || horizontalSpeed < 0 && transform.localScale.x > 0) {
+			transform.localScale *= new Vector2(-1,1);
+            flipped = !flipped;
+		}
     }
 }

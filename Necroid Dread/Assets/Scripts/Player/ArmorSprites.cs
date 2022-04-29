@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class ArmorSprites : MonoBehaviour
 {
-    public Sprite[] bodyArmorSprites;
-    public Sprite[] headArmorSprites;
-    public Sprite[] legArmorSprites;
+    public Sprite[] armorSprites;
 
-    // Update is called once per frame
-    void Update()
-    {
-
+    void Awake() {
+        DontDestroyOnLoad(this);
     }
 }
