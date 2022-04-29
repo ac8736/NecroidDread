@@ -887,6 +887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1549784029}
   animator: {fileID: 968886829}
+  inDialogue: 0
 --- !u!4 &284685553
 Transform:
   m_ObjectHideFlags: 0
@@ -2882,14 +2883,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 845943589655888756, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
-      propertyPath: m_Size.y
-      value: 1.1961651
-      objectReference: {fileID: 0}
-    - target: {fileID: 845943589655888756, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.57952404
-      objectReference: {fileID: 0}
     - target: {fileID: 845943589655888757, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: joystick
       value: 
@@ -2941,10 +2934,6 @@ PrefabInstance:
     - target: {fileID: 845943589655888760, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 845943589655888761, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
-      propertyPath: m_SortingOrder
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 845943589655888766, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: m_Name
