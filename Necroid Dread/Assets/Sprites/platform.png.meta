@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,6 +102,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -652,7 +664,6 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       platform_13: 1056501682
-      platform_22: 477476176
       platform_1: 1339750712
       platform_17: -543343773
       platform_6: 142644706
@@ -667,12 +678,13 @@ TextureImporter:
       platform_7: 806673374
       platform_3: 1766791388
       platform_10: -713617466
-      platform_14: -1931931547
+      platform_22: 477476176
       platform_2: -1754558218
-      platform_12: -1010020731
+      platform_14: -1931931547
       platform_4: -104951096
-      platform_11: -1396565590
+      platform_12: -1010020731
       platform_20: -2129702627
+      platform_11: -1396565590
       platform_9: 36289508
       platform_15: 1452064831
       platform_19: -767775176
