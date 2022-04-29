@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1020,10 +1020,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lvl3 assets_40: -1026326858
       lvl3 assets_28: 1545846077
       lvl3 assets_34: 1961018105
-      lvl3 assets_37: -1811487987
       lvl3 assets_30: 791808643
       lvl3 assets_17: 704338146
       lvl3 assets_3: -1182334582
@@ -1037,14 +1035,16 @@ TextureImporter:
       lvl3 assets_9: 755508190
       lvl3 assets_13: 1380727045
       lvl3 assets_1: 1248094645
+      lvl3 assets_36: 1508963764
       lvl3 assets_15: -565559225
       lvl3 assets_10: -1871035951
       lvl3 assets_2: -857477000
       lvl3 assets_4: -1256958485
-      lvl3 assets_5: -1253782188
+      lvl3 assets_37: -1811487987
       lvl3 assets_25: -1105078784
-      lvl3 assets_31: 2019094888
       lvl3 assets_33: 977753662
+      lvl3 assets_31: 2019094888
+      lvl3 assets_5: -1253782188
       lvl3 assets_20: 698072853
       lvl3 assets_18: -111336672
       lvl3 assets_24: 1476654267
@@ -1053,10 +1053,10 @@ TextureImporter:
       lvl3 assets_26: -851354826
       lvl3 assets_41: 312522556
       lvl3 assets_21: -1465459313
+      lvl3 assets_40: -1026326858
       lvl3 assets_0: -2087411829
-      lvl3 assets_6: -46607327
       lvl3 assets_11: 799279245
-      lvl3 assets_36: 1508963764
+      lvl3 assets_6: -46607327
       lvl3 assets_8: 1443708609
       lvl3 assets_23: -1651268232
       lvl3 assets_7: -313592584
