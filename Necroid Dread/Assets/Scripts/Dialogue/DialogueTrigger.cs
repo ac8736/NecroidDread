@@ -6,13 +6,23 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
     public Animator animator;
+    public bool inDialogue = false;
+    public Transform player;
+    bool appeared = false;
     
-    void Start() {
-        StartCoroutine(delay());
-    }
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            FindObjectOfType<DialogueManager>().DisplayNextSentence();
+        if (Vector3.Distance(transform.position, player.position) < 10 && !inDialogue && !appeared) {
+            inDialogue = true;
+            StartCoroutine(delay());
+            appeared = true;
+        }
+        if (inDialogue) {
+            for (int i = 0; i < Input.touchCount; ++i) {
+                if (Input.GetTouch(i).phase == TouchPhase.Began) {
+                    print("began");
+                    FindObjectOfType<DialogueManager>().DisplayNextSentence();
+                }
+            }
         }
     }
     public void TriggerDialogue() {

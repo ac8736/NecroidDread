@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public Animator animator;
     public bool inDialogue = false;
+    public DialogueTrigger dialogueTrigger;
     public void StartDialogue(Dialogue dialogue)
     {
         inDialogue = true;
@@ -35,6 +36,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         inDialogue = false;
+        dialogueTrigger.inDialogue = false;
         animator.SetTrigger("Close");
     }
 

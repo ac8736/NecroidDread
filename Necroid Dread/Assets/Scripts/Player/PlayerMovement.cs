@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D boxCollider;
     public Animator animator;
     public bool flipped = false;
+    public JumpButton jumpButton;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -55,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
             boxCollider.enabled = true;
         }
-        if (joystick.Vertical >= 0.7f && isGrounded)
+        if (jumpButton.jump && isGrounded)
         {
             _rigidbody.velocity = Vector2.up * jumpForce;
             animator.SetBool("jump", true);
