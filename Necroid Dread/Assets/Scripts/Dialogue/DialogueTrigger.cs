@@ -6,6 +6,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
     public Animator animator;
+    
     void Start() {
         StartCoroutine(delay());
     }

@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             boxCollider.enabled = false;
         } else {
             Vector3 targetVelocity = new Vector2(horizontalSpeed, _rigidbody.velocity.y);
-		    _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+            _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
             boxCollider.enabled = true;
         }
         if (joystick.Vertical >= 0.7f && isGrounded)
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             animator.SetBool("jump", false);
-        }
+        }    
     }
 
     void Flip()

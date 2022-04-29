@@ -9,8 +9,10 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences = new Queue<string>();
     public TextMeshProUGUI dialogueText;
     public Animator animator;
+    public bool inDialogue = false;
     public void StartDialogue(Dialogue dialogue)
     {
+        inDialogue = true;
         sentences.Clear();
         foreach (string sentence in dialogue.sentences)
         {
@@ -32,6 +34,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        inDialogue = false;
         animator.SetTrigger("Close");
     }
 
