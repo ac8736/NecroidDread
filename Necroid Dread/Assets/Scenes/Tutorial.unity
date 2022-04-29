@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3207547, g: 0.11304518, b: 0.10439658, a: 0.79607844}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -513,8 +513,10 @@ MonoBehaviour:
     sentences:
     - Move the joystick left to move left, and right to move right.
     - To jump, move the joystick up. To crouch, move the joystick down.
-    - There will be upgraded versions of your armor scattered. In order to unlock
-      abilities and bonus stats, you'll need to collect the armor.
+    - You press the button on the right to shoot.
+    - 'There will be upgraded versions of your armor scattered. '
+    - In order to unlock abilities and bonus stats, you'll need to collect the armor.
+    - As you unlock abilities, a button will appear to allow your use of the ability.
   animator: {fileID: 968886829}
 --- !u!1 &656849102
 GameObject:
@@ -742,8 +744,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 33.4, y: -39.6}
-  m_SizeDelta: {x: 0, y: -65.3194}
+  m_AnchoredPosition: {x: 29.059273, y: -39.6}
+  m_SizeDelta: {x: 44.27283, y: -65.3194}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1013104541
 MonoBehaviour:
@@ -767,8 +769,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Tap to continue...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ac90931f15a44c045ba7435ee0e42563, type: 2}
+  m_sharedMaterial: {fileID: -4519304056125855548, guid: ac90931f15a44c045ba7435ee0e42563, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -792,8 +794,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14.9
-  m_fontSizeBase: 14.9
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -913,8 +915,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ac90931f15a44c045ba7435ee0e42563, type: 2}
+  m_sharedMaterial: {fileID: -4519304056125855548, guid: ac90931f15a44c045ba7435ee0e42563, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
