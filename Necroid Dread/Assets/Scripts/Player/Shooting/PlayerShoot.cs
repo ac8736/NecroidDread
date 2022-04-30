@@ -10,7 +10,7 @@ public class PlayerShoot : MonoBehaviour
     public Transform gun;
     void Update()
     {
-        if (shootDetection.shoot) {
+        if (shootDetection.shoot || Input.GetKeyDown(KeyCode.E)) {
             if (canShoot)
                 Shoot();    
         }

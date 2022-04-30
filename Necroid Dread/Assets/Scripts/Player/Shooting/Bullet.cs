@@ -17,6 +17,9 @@ public class Bullet : MonoBehaviour
         }
         StartCoroutine(DestroyBullet());
     }
+    private void OnTriggerEnter2D(Collider2D other) {
+        Destroy(gameObject);
+    }
     IEnumerator DestroyBullet()
     {
         yield return new WaitForSeconds(3);
