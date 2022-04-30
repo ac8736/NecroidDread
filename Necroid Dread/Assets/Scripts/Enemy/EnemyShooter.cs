@@ -103,7 +103,7 @@ public class EnemyShooter : MonoBehaviour
 
     IEnumerator die() {
         animator.SetTrigger("die");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.8f);
         Destroy(this.gameObject);
     }
 }
