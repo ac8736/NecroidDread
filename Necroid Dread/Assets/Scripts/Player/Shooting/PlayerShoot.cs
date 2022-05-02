@@ -10,15 +10,18 @@ public class PlayerShoot : MonoBehaviour
     public Transform gun;
     void Update()
     {
-        if (shootDetection.shoot || Input.GetKeyDown(KeyCode.E)) {
-            if (canShoot)
-                Shoot();    
-        }
+        // if (shootDetection.shoot || Input.GetKeyDown(KeyCode.E)) {
+        //     if (canShoot)
+        //         Shoot();    
+        // }
     }
-    void Shoot()
+    public void Shoot()
     {
-        Instantiate(bullet, gun.position, Quaternion.identity);
-        StartCoroutine(ShootCooldown());
+        if (canShoot)
+        {
+            Instantiate(bullet, gun.position, Quaternion.identity);
+            StartCoroutine(ShootCooldown());
+        }
     }
     IEnumerator ShootCooldown()
     {

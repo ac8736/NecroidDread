@@ -47,31 +47,39 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (joystick.Vertical <= -0.7f && isGrounded) {
+        if (joystick.Vertical <= -0.7f && isGrounded)
+        {
             Vector3 targetVelocity = new Vector2(horizontalSpeed * crouchSpeedReduction, _rigidbody.velocity.y);
             _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
             boxCollider.enabled = false;
-        } else {
+        }
+        else
+        {
             Vector3 targetVelocity = new Vector2(horizontalSpeed, _rigidbody.velocity.y);
             _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
             boxCollider.enabled = true;
         }
-        if (jumpButton.jump && isGrounded)
+        if (isGrounded)
+        {
+            animator.SetBool("jump", false);
+        }
+    }
+
+    public void Jump()
+    {
+        if (isGrounded)
         {
             _rigidbody.velocity = Vector2.up * jumpForce;
             animator.SetBool("jump", true);
         }
-        else
-        {
-            animator.SetBool("jump", false);
-        }    
     }
 
     void Flip()
     {
-        if (horizontalSpeed > 0 && transform.localScale.x < 0 || horizontalSpeed < 0 && transform.localScale.x > 0) {
-			transform.localScale *= new Vector2(-1,1);
+        if (horizontalSpeed > 0 && transform.localScale.x < 0 || horizontalSpeed < 0 && transform.localScale.x > 0)
+        {
+            transform.localScale *= new Vector2(-1, 1);
             flipped = !flipped;
-		}
+        }
     }
 }
