@@ -20,6 +20,16 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D boxCollider;
     public Animator animator;
     public bool flipped = false;
+    public bool upgrade = false;
+    int numOfJumps = 0;
+    private bool wallSliding;
+    public float wallSlidingSpeed;
+    private bool wallJumping;
+    public float xWallForce;
+    public float yWallForce;
+    private int wallJumps = 2;
+    private bool isTouchingFront;
+    public Transform frontCheck;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -29,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Flip();
         isGrounded = Physics2D.OverlapCircle(feet.position, checkRadius, platformLayerMask);
+        isTouchingFront = Physics2D.OverlapCircle(frontCheck.position, checkRadius, platformLayerMask);
+
         if (joystick.Horizontal >= 0.2f)
         {
             horizontalSpeed = runSpeed;
@@ -42,6 +54,26 @@ public class PlayerMovement : MonoBehaviour
             horizontalSpeed = 0;
         }
         animator.SetFloat("speed", Mathf.Abs(horizontalSpeed));
+
+        if (isTouchingFront && !isGrounded && horizontalSpeed != 0)
+        {
+            wallSliding = true;
+        }
+        else
+        {
+            wallSliding = false;
+        }
+
+        if (wallJumps == 0 && isGrounded)
+        {
+            wallJumps = 2;
+        }
+
+        if (wallSliding)
+        {
+            if (upgrade)
+                _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, Mathf.Clamp(_rigidbody.velocity.y, -wallSlidingSpeed, float.MaxValue));
+        }
     }
 
     private void FixedUpdate()
@@ -59,20 +91,48 @@ public class PlayerMovement : MonoBehaviour
             boxCollider.enabled = true;
         }
         if (isGrounded)
-        {
-            animator.SetBool("jump", false);
-        }
+            numOfJumps = 0;
     }
 
     public void Jump()
     {
-        if (isGrounded)
+        if (upgrade)
         {
-            _rigidbody.velocity = Vector2.up * jumpForce;
-            animator.SetBool("jump", true);
+            if (numOfJumps < 2)
+            {
+                if (isGrounded)
+                {
+                    animator.SetTrigger("jump");
+                    _rigidbody.velocity = Vector2.up * jumpForce;
+                }
+                else
+                {
+                    animator.SetTrigger("jump");
+                    _rigidbody.velocity = Vector2.up * (jumpForce - 3);
+                }
+                numOfJumps++;
+            }
+        }
+        else
+        {
+            if (isGrounded)
+            {
+                animator.SetTrigger("jump");
+                _rigidbody.velocity = Vector2.up * jumpForce;
+            }
         }
     }
-
+    public void WallJump()
+    {
+        if (upgrade)
+        {
+            if (wallSliding && wallJumps > 0)
+            {
+                _rigidbody.velocity = new Vector2(xWallForce * -horizontalSpeed, yWallForce);
+                --wallJumps;
+            }
+        }
+    }
     void Flip()
     {
         if (horizontalSpeed > 0 && transform.localScale.x < 0 || horizontalSpeed < 0 && transform.localScale.x > 0)

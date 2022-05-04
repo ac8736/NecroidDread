@@ -8,8 +8,8 @@ public class ArmorPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            print("Armor Pickup");
             other.GetComponent<PlayerMovement>().animator.SetBool("UpgradedArmor", true);
+            other.GetComponent<PlayerMovement>().upgrade = true;
             Destroy(gameObject);
         }
     }
