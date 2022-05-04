@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D boxCollider;
     public Animator animator;
     public bool flipped = false;
-    public JumpButton jumpButton;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();

@@ -18,12 +18,16 @@ public class EnemyShooter : MonoBehaviour
     public GameObject eyes;
     public GameObject gun;
     private bool foundPlayer = false;
-    public Transform player;
+    Transform player;
     public GameObject bullet;
     private bool canShoot = true;
     public Animator animator;
     public int health = 3;
     bool cantDmg = false;
+
+    void Start() {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     void Update()
     {
