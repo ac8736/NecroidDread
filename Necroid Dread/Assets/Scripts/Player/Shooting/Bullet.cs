@@ -18,7 +18,9 @@ public class Bullet : MonoBehaviour
         StartCoroutine(DestroyBullet());
     }
     private void OnTriggerEnter2D(Collider2D other) {
-        Destroy(gameObject);
+        if (other.gameObject.tag.Contains("Enemy")) {
+            Destroy(gameObject);
+        }
     }
     IEnumerator DestroyBullet()
     {

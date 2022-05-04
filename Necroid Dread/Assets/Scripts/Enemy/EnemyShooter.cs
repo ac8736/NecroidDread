@@ -23,6 +23,7 @@ public class EnemyShooter : MonoBehaviour
     private bool canShoot = true;
     public Animator animator;
     public int health = 3;
+    bool cantDmg = false;
 
     void Update()
     {
@@ -56,10 +57,12 @@ public class EnemyShooter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Bullet")) {
-            animator.SetTrigger("hit");
-            health--;
-            if (health <= 0)
-                StartCoroutine(die());
+            if (!cantDmg) {
+                animator.SetTrigger("hit");
+                health--;
+                if (health <= 0)
+                    StartCoroutine(die());
+            }
         }
     }
 
@@ -82,8 +85,11 @@ public class EnemyShooter : MonoBehaviour
             Flip();
         }
         if (canShoot) {
-            print("shoot");
-            Instantiate(bullet, gun.transform.position, Quaternion.identity);
+            GameObject newBullet = Instantiate(bullet, gun.transform.position, Quaternion.identity);
+            if (transform.localScale.x > 0)
+                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-30, 0);
+            else 
+                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(30, 0);
             canShoot = false;
             StartCoroutine(shootCD());
         }
@@ -102,6 +108,8 @@ public class EnemyShooter : MonoBehaviour
     }
 
     IEnumerator die() {
+        cantDmg = true;
+        _rigidbody.velocity = Vector2.zero;
         animator.SetTrigger("die");
         yield return new WaitForSeconds(0.8f);
         Destroy(this.gameObject);

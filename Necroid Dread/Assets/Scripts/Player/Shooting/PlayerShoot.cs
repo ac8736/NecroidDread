@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    public ShootDetection shootDetection;
     private bool canShoot = true;
     public GameObject bullet;
     public Transform gun;
     void Update()
     {
-        // if (shootDetection.shoot || Input.GetKeyDown(KeyCode.E)) {
-        //     if (canShoot)
-        //         Shoot();    
-        // }
+        if (Input.GetKeyDown(KeyCode.E)) {
+            if (canShoot)
+                Shoot();    
+        }
     }
     public void Shoot()
     {

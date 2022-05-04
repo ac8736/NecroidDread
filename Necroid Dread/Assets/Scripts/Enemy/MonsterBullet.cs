@@ -7,15 +7,6 @@ public class MonsterBullet : MonoBehaviour
     private Rigidbody2D _rigidbody;
     void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
-        if (-GameObject.FindGameObjectWithTag("EnemyShooter").GetComponent<EnemyShooter>().transform.localScale.x == 1)
-        {
-            _rigidbody.velocity = new Vector2(30, 0);
-        }
-        else
-        {
-            _rigidbody.velocity = new Vector2(-30, 0);
-        }
         StartCoroutine(despawn());
     }
 
