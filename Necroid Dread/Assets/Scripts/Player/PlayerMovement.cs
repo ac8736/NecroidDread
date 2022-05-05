@@ -63,6 +63,8 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             wallSliding = false;
+            animator.SetBool("hanging", false);
+            animator.SetBool("hangingLeft", false);
         }
 
         if (wallJumps == 0 && isGrounded)
@@ -70,10 +72,14 @@ public class PlayerMovement : MonoBehaviour
             wallJumps = 2;
         }
 
-        if (wallSliding)
+        if (wallSliding && upgrade)
         {
-            if (upgrade)
-                _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, Mathf.Clamp(_rigidbody.velocity.y, -wallSlidingSpeed, float.MaxValue));
+            if (horizontalSpeed < 0)
+                animator.SetBool("hangingLeft", true);
+            else
+                animator.SetBool("hanging", true);
+            
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, Mathf.Clamp(_rigidbody.velocity.y, -wallSlidingSpeed, float.MaxValue));
         }
     }
 
@@ -129,6 +135,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (wallSliding && wallJumps > 0)
             {
+                animator.SetBool("hanging", false);
+                animator.SetBool("hangingLeft", false);
                 _rigidbody.velocity = new Vector2(xWallForce * -horizontalSpeed, yWallForce);
                 --wallJumps;
             }
