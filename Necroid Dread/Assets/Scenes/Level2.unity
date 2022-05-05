@@ -1264,6 +1264,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: shieldUI
+      value: 
+      objectReference: {fileID: 481339355}
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 481339354}
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: shieldbar
+      value: 
+      objectReference: {fileID: 481339353}
     - target: {fileID: 845943589655888757, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: joystick
       value: 
@@ -1280,6 +1292,10 @@ PrefabInstance:
       propertyPath: jumpButton
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 845943589655888757, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: wallJumpButton
+      value: 
+      objectReference: {fileID: 481339352}
     - target: {fileID: 845943589655888758, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: shootDetection
       value: 
@@ -2144,6 +2160,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 469143054, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469143054, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1500354010, guid: 836868de17144be42a3fca2920b98d09, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2151,6 +2175,14 @@ PrefabInstance:
     - target: {fileID: 1500354010, guid: 836868de17144be42a3fca2920b98d09, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Shoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652301468, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652301468, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2132709498, guid: 836868de17144be42a3fca2920b98d09, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2250,6 +2282,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+--- !u!114 &481339352 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2233095262339744714, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+  m_PrefabInstance: {fileID: 481339351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &481339353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 265503655, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+  m_PrefabInstance: {fileID: 481339351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481339355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d77937ae63648540b41e2c1899f6bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &481339354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2491779305788955264, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+  m_PrefabInstance: {fileID: 481339351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d77937ae63648540b41e2c1899f6bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &481339355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 265503653, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+  m_PrefabInstance: {fileID: 481339351}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &485452045
 GameObject:
   m_ObjectHideFlags: 0

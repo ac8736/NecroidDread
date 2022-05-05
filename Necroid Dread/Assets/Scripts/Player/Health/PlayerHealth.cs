@@ -12,8 +12,10 @@ public class PlayerHealth : MonoBehaviour
     public Healthbar shieldbar;
     public GameObject shieldUI;
     bool shieldActive = false;
+    Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
     }
@@ -24,11 +26,13 @@ public class PlayerHealth : MonoBehaviour
     }
     void TakeDamage(float damage) {
         if (shieldActive && currentShield > 0) {
+            animator.SetTrigger("shieldDmg");
             currentShield -= damage;
             shieldbar.SetHealth(currentShield);
             StopAllCoroutines();
             StartCoroutine(initializeShieldRegeneration());
         } else {
+            animator.SetTrigger("healthDmg");
             currentHealth -= damage;
             healthbar.SetHealth(currentHealth);
         }
