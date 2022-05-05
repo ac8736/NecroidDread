@@ -7,9 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 682254763786188049, guid: 06649edac94782d489e2481497165ce2, type: 3}
+      propertyPath: m_Size.y
+      value: 3.6495788
+      objectReference: {fileID: 0}
+    - target: {fileID: 682254763786188049, guid: 06649edac94782d489e2481497165ce2, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.00021064281
+      objectReference: {fileID: 0}
     - target: {fileID: 682254763786188051, guid: 06649edac94782d489e2481497165ce2, type: 3}
       propertyPath: m_Name
-      value: WalkingEnemy
+      value: MiniWalker
       objectReference: {fileID: 0}
     - target: {fileID: 682254763786188052, guid: 06649edac94782d489e2481497165ce2, type: 3}
       propertyPath: m_RootOrder
@@ -25,11 +33,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 682254763786188052, guid: 06649edac94782d489e2481497165ce2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.18
+      value: -64.02649
       objectReference: {fileID: 0}
     - target: {fileID: 682254763786188052, guid: 06649edac94782d489e2481497165ce2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.38
+      value: 32.01641
       objectReference: {fileID: 0}
     - target: {fileID: 682254763786188052, guid: 06649edac94782d489e2481497165ce2, type: 3}
       propertyPath: m_LocalPosition.z
