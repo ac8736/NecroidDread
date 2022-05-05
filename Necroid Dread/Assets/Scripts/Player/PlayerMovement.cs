@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 10f;
     bool isGrounded = true;
     float checkRadius = 0.1f;
-    public float crouchSpeedReduction = 0.5f;
     public Joystick joystick;
     private float horizontalSpeed;
     private BoxCollider2D boxCollider;
@@ -40,6 +39,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Flip();
         isGrounded = Physics2D.OverlapCircle(feet.position, checkRadius, platformLayerMask);
+
+        if (isGrounded)
+            numOfJumps = 0;
+
         isTouchingFront = Physics2D.OverlapCircle(frontCheck.position, checkRadius, platformLayerMask);
 
         if (joystick.Horizontal >= 0.2f)
@@ -74,33 +77,20 @@ public class PlayerMovement : MonoBehaviour
 
         if (wallSliding && upgrade)
         {
-            if (horizontalSpeed < 0)
-                animator.SetBool("hangingLeft", true);
-            else
+            if (joystick.Horizontal < 0) {
                 animator.SetBool("hanging", true);
+            }
+            else {
+                animator.SetBool("hangingLeft", true);
+            }
             
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, Mathf.Clamp(_rigidbody.velocity.y, -wallSlidingSpeed, float.MaxValue));
         }
     }
-
-    private void FixedUpdate()
-    {
-        if (joystick.Vertical <= -0.7f && isGrounded)
-        {
-            Vector3 targetVelocity = new Vector2(horizontalSpeed * crouchSpeedReduction, _rigidbody.velocity.y);
-            _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-            boxCollider.enabled = false;
-        }
-        else
-        {
-            Vector3 targetVelocity = new Vector2(horizontalSpeed, _rigidbody.velocity.y);
-            _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-            boxCollider.enabled = true;
-        }
-        if (isGrounded)
-            numOfJumps = 0;
+    void FixedUpdate() {
+        Vector3 targetVelocity = new Vector2(horizontalSpeed, _rigidbody.velocity.y);
+        _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
     }
-
     public void Jump()
     {
         if (upgrade)
@@ -137,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 animator.SetBool("hanging", false);
                 animator.SetBool("hangingLeft", false);
+                animator.SetTrigger("jump");
                 _rigidbody.velocity = new Vector2(xWallForce * -horizontalSpeed, yWallForce);
                 --wallJumps;
             }
