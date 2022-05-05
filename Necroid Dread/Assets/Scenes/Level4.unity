@@ -584,11 +584,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3978429388017042502, guid: dc0bdc848e11d6044893016c8b7d2655, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -64.02649
+      value: -67.23
       objectReference: {fileID: 0}
     - target: {fileID: 3978429388017042502, guid: dc0bdc848e11d6044893016c8b7d2655, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 32.01641
+      value: 39.91
       objectReference: {fileID: 0}
     - target: {fileID: 3978429388017042502, guid: dc0bdc848e11d6044893016c8b7d2655, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1515,25 +1515,9 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1919515264}
-    - target: {fileID: 845943589655888757, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
-      propertyPath: jumpButton
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 845943589655888760, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: m_RootOrder
       value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 845943589655888760, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 845943589655888760, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 845943589655888760, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 845943589655888760, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: m_LocalPosition.x

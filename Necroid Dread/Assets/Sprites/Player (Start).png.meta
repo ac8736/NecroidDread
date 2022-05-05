@@ -472,7 +472,7 @@ TextureImporter:
         width: 43
         height: 57
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -480,6 +480,27 @@ TextureImporter:
       bones: []
       spriteID: f85b95274abfe824a925ed41278ad3f7
       internalID: 354077984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player (Start)_17
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 65
+        width: 43
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd4930c0e083c84393c37f3cea1ada4
+      internalID: 1622046813
       vertices: []
       indices: 
       edges: []

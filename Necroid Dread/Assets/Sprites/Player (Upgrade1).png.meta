@@ -472,7 +472,7 @@ TextureImporter:
         width: 43
         height: 57
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -480,6 +480,27 @@ TextureImporter:
       bones: []
       spriteID: 48f5dcc900c5a884b83b39fdffa5c546
       internalID: 209354284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player (Upgrade1)_17
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 65
+        width: 43
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d8bd6cab5fc234191649c963ff8e1f
+      internalID: -996030055
       vertices: []
       indices: 
       edges: []
