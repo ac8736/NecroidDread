@@ -12138,6 +12138,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &650237720 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2233095262339744714, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+  m_PrefabInstance: {fileID: 9207659317906100061}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &656849102
 GameObject:
   m_ObjectHideFlags: 0
@@ -36241,6 +36252,10 @@ PrefabInstance:
       propertyPath: wallJumpTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 845943589655888757, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: wallJumpButton
+      value: 
+      objectReference: {fileID: 650237720}
     - target: {fileID: 845943589655888758, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: shootDetection
       value: 

@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private int wallJumps = 2;
     private bool isTouchingFront;
     public Transform frontCheck;
+    public Button wallJumpButton;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -66,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             wallSliding = false;
+            wallJumpButton.gameObject.SetActive(false);
             animator.SetBool("hanging", false);
             animator.SetBool("hangingLeft", false);
         }
@@ -83,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             else {
                 animator.SetBool("hangingLeft", true);
             }
-            
+            wallJumpButton.gameObject.SetActive(true);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, Mathf.Clamp(_rigidbody.velocity.y, -wallSlidingSpeed, float.MaxValue));
         }
     }
