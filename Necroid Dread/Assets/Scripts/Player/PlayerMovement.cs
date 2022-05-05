@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public bool flipped = false;
     public bool upgrade = false;
+    public bool final = false;
     int numOfJumps = 0;
     private bool wallSliding;
     public float wallSlidingSpeed;
