@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 845943589655888756}
   - component: {fileID: 845943589655888759}
   - component: {fileID: 845943589655888758}
+  - component: {fileID: 49702844326559945}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -220,7 +221,6 @@ MonoBehaviour:
   feet: {fileID: 845943588907388756}
   runSpeed: 12
   jumpForce: 15
-  crouchSpeedReduction: 0.5
   joystick: {fileID: 0}
   animator: {fileID: 845943589655888759}
   flipped: 0
@@ -230,6 +230,7 @@ MonoBehaviour:
   xWallForce: 20
   yWallForce: 15
   frontCheck: {fileID: 3650838198797716535}
+  wallJumpButton: {fileID: 0}
 --- !u!61 &845943589655888756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -290,6 +291,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 335278608816377782, guid: 3e3c6f2f43a948c4c80ab7eb685f9dcb, type: 3}
   gun: {fileID: 845943589218860548}
+--- !u!114 &49702844326559945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845943589655888766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 562edd811451387448cd6ac59dfcdc30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  currentHealth: 0
+  healthbar: {fileID: 0}
 --- !u!1 &6115918133790723463
 GameObject:
   m_ObjectHideFlags: 0

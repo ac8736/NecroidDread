@@ -19,11 +19,11 @@ public class StationaryShooter : MonoBehaviour
     {
         RaycastHit2D hit;
         if (facingLeft) {
-            Debug.DrawRay(eyes.transform.position, -sightDirection * range, Color.red);
+            //Debug.DrawRay(eyes.transform.position, -sightDirection * range, Color.red);
             hit = Physics2D.Raycast(eyes.transform.position, -sightDirection * range);
         }
         else {
-            Debug.DrawRay(eyes.transform.position, sightDirection * range, Color.red);
+            //Debug.DrawRay(eyes.transform.position, sightDirection * range, Color.red);
             hit = Physics2D.Raycast(eyes.transform.position, sightDirection * range);
         }
         if (hit.collider != null) {

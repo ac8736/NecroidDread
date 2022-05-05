@@ -8,8 +8,8 @@ public class FinalArmorPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            print("Armor Pickup");
             other.GetComponent<PlayerMovement>().animator.SetBool("FinalArmor", true);
+            other.GetComponent<PlayerHealth>().obtainShield();
             Destroy(gameObject);
         }
     }
