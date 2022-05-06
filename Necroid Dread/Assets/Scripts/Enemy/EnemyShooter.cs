@@ -140,13 +140,8 @@ public class EnemyShooter : MonoBehaviour
         yield return null;
     }
 
-<<<<<<< Updated upstream
-    IEnumerator die()
-    {
-=======
     IEnumerator die() {
         _audio.PlayOneShot(DeathSound);  
->>>>>>> Stashed changes
         cantDmg = true;
         _rigidbody.velocity = Vector2.zero;
         animator.SetTrigger("die");
