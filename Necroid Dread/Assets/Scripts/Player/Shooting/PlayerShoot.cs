@@ -7,17 +7,24 @@ public class PlayerShoot : MonoBehaviour
     private bool canShoot = true;
     public GameObject bullet;
     public Transform gun;
+    public AudioClip bulletSound;
+    AudioSource _audio;
+    void Awake() {
+        _audio = GetComponent<AudioSource>();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E)) {
             if (canShoot)
-                Shoot();    
+                Shoot();
+                 
         }
     }
     public void Shoot()
     {
         if (canShoot)
         {
+            _audio.PlayOneShot(bulletSound);  
             Instantiate(bullet, gun.position, Quaternion.identity);
             StartCoroutine(ShootCooldown());
         }
