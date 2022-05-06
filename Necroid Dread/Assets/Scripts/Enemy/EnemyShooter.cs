@@ -18,6 +18,7 @@ public class EnemyShooter : MonoBehaviour
     public GameObject eyes;
     public GameObject gun;
     private bool foundPlayer = false;
+    private bool harmless = false;
     Transform player;
     public GameObject bullet;
     private bool canShoot = true;
@@ -32,7 +33,7 @@ public class EnemyShooter : MonoBehaviour
     void Update()
     {
         RaycastHit2D hit = Physics2D.Raycast(eyes.transform.position, -sightDirection * range);
-        if (hit.collider != null) {
+        if (hit.collider != null && (!harmless)) {
             if (hit.transform.tag == "Player" || hit.transform.tag == "Bullet") {
                 foundPlayer = true;
             } else {
@@ -47,7 +48,7 @@ public class EnemyShooter : MonoBehaviour
         if (foundPlayer) {
             animator.SetBool("seePlayer", true);
             Attack();
-        } else {
+        } else if (!harmless) {
             animator.SetBool("seePlayer", false);
             Patrol();
         }
@@ -115,7 +116,8 @@ public class EnemyShooter : MonoBehaviour
         cantDmg = true;
         _rigidbody.velocity = Vector2.zero;
         animator.SetTrigger("die");
-        yield return new WaitForSeconds(0.8f);
+        harmless = true;
+        yield return new WaitForSeconds(10f);
         Destroy(this.gameObject);
     }
 }
