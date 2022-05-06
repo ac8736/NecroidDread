@@ -16,7 +16,7 @@ public class MonsterBullet : MonoBehaviour
     }
 
     IEnumerator despawn() {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         Destroy(this.gameObject);
         yield return null;
     }

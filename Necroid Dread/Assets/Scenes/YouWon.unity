@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -14.6}
+  m_AnchoredPosition: {x: 0, y: 104}
   m_SizeDelta: {x: 722.744, y: 91.721}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &65301696
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: YOU WON! CONGRATS!
+  m_text: "VICTORY! \nTHE GALAXY REMAINS SAFE FOR NOW..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac90931f15a44c045ba7435ee0e42563, type: 2}
   m_sharedMaterial: {fileID: -4519304056125855548, guid: ac90931f15a44c045ba7435ee0e42563, type: 2}
