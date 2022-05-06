@@ -11,6 +11,7 @@ public class StationaryShooter : MonoBehaviour
     private bool foundPlayer = false;
     public GameObject bullet;
     private bool canShoot = true;
+    private bool harmless = false;
     public Animator animator;
     public int health = 4;
     bool cantDmg = false;
@@ -26,7 +27,7 @@ public class StationaryShooter : MonoBehaviour
             //Debug.DrawRay(eyes.transform.position, sightDirection * range, Color.red);
             hit = Physics2D.Raycast(eyes.transform.position, sightDirection * range);
         }
-        if (hit.collider != null) {
+        if (hit.collider != null && (!harmless)) {
             if (hit.transform.tag == "Player" || hit.transform.tag == "Bullet") {
                 foundPlayer = true;
             } else {
@@ -70,7 +71,8 @@ public class StationaryShooter : MonoBehaviour
     IEnumerator die() {
         cantDmg = true;
         animator.SetTrigger("die");
-        yield return new WaitForSeconds(0.5f);
+        harmless = true;
+        yield return new WaitForSeconds(30f);
         Destroy(this.gameObject);
     }
 }
