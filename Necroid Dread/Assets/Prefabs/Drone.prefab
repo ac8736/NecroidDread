@@ -110,6 +110,7 @@ MonoBehaviour:
   health: 3
   facingLeft: 1
   DeathSound: {fileID: 8300000, guid: 4262250e22cae40e0b500adbed90738f, type: 3}
+  Gunshot: {fileID: 8300000, guid: 2271fbe62206e9149b3b6a361ef826e8, type: 3}
 --- !u!61 &3339814686680548253
 BoxCollider2D:
   m_ObjectHideFlags: 0

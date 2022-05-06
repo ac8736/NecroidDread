@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyShooter : MonoBehaviour
 {
     private Vector3 m_Velocity = Vector3.zero;
-    private float m_MovementSmoothing = .02f;
+    private float m_MovementSmoothing = .04f;
     private int range = 6;
     private Vector2 sightDirection = Vector2.right;
     public float patrolSpeed;
@@ -26,6 +26,7 @@ public class EnemyShooter : MonoBehaviour
     public int health = 3;
     bool cantDmg = false;
     public AudioClip DeathSound;
+    public AudioClip Gunshot;
     AudioSource _audio;
 
 
@@ -135,6 +136,7 @@ public class EnemyShooter : MonoBehaviour
 
     IEnumerator shootCD()
     {
+        _audio.PlayOneShot(Gunshot);
         yield return new WaitForSeconds(0.8f);
         canShoot = true;
         yield return null;

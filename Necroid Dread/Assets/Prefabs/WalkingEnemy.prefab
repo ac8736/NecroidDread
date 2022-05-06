@@ -278,6 +278,7 @@ MonoBehaviour:
   animator: {fileID: 682254763786188053}
   health: 5
   DeathSound: {fileID: 8300000, guid: 776e1e88b8efd47919ebafbae7acf782, type: 3}
+  Gunshot: {fileID: 8300000, guid: 2271fbe62206e9149b3b6a361ef826e8, type: 3}
 --- !u!82 &8755238067854109383
 AudioSource:
   m_ObjectHideFlags: 0

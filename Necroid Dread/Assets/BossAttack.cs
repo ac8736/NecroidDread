@@ -8,6 +8,15 @@ public class BossAttack : MonoBehaviour
     public Transform gun;
     bool playerNear = false;
     public int detection = 10;
+
+    public AudioClip gunshot;
+    AudioSource _audio;
+
+    void Awake()
+    {
+        _audio = GetComponent<AudioSource>();
+    }
+    
     void Start()
     {
         StartCoroutine(Attack());
@@ -39,6 +48,7 @@ public class BossAttack : MonoBehaviour
             yield return new WaitForSeconds(4);
             if (playerNear)
             {
+                 _audio.PlayOneShot(gunshot);
                 Instantiate(bullet, gun.position, gun.rotation);
             }
         }

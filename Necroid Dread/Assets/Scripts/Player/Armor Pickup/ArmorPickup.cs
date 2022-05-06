@@ -6,7 +6,7 @@ public class ArmorPickup : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !other.GetComponent<PlayerMovement>().final)
         {
             other.GetComponent<PlayerMovement>().animator.SetBool("UpgradedArmor", true);
             other.GetComponent<PlayerMovement>().upgrade = true;

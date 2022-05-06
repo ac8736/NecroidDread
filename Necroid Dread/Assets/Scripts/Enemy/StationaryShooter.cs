@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StationaryShooter : MonoBehaviour
 {
-    private float range = 7f;
+    private float range = 14f;
     private Vector2 sightDirection = Vector2.right;
     public GameObject eyes;
     public GameObject gun;
@@ -18,6 +18,7 @@ public class StationaryShooter : MonoBehaviour
     public bool facingLeft = false;
 
     public AudioClip DeathSound;
+    public AudioClip Gunshot;
     AudioSource _audio;
 
     void Awake()
@@ -89,6 +90,7 @@ public class StationaryShooter : MonoBehaviour
     }
     IEnumerator shootCD()
     {
+        _audio.PlayOneShot(Gunshot);
         yield return new WaitForSeconds(1.5f);
         canShoot = true;
         yield return null;
