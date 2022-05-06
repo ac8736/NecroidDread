@@ -99,15 +99,14 @@ public class PlayerHealth : MonoBehaviour
     }
     IEnumerator regenHealth()
     {
-        yield return new WaitForSeconds(5);
-        while (currentHealth < maxHealth)
+        while (true)
         {
-            if (currentHealth + 0.1f <= maxHealth)
+            if (currentHealth + 0.2f <= maxHealth)
             {
-                currentHealth += 0.1f;
+                currentHealth += 0.2f;
                 healthbar.SetHealth(currentHealth);
             }
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(2f);
         }
     }
 }
