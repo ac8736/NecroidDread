@@ -15,6 +15,14 @@ public class MonsterBullet : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
     IEnumerator despawn() {
         yield return new WaitForSeconds(2.5f);
         Destroy(this.gameObject);
