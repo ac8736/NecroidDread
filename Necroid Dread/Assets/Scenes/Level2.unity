@@ -1527,7 +1527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 845943589655888760, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -58.763206
+      value: -57.56
       objectReference: {fileID: 0}
     - target: {fileID: 845943589655888760, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2508,6 +2508,10 @@ PrefabInstance:
     - target: {fileID: 9207659317821561875, guid: 836868de17144be42a3fca2920b98d09, type: 3}
       propertyPath: m_Name
       value: Canvas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207659317821561875, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 836868de17144be42a3fca2920b98d09, type: 3}
@@ -3675,10 +3679,9 @@ GameObject:
   - component: {fileID: 915412456}
   - component: {fileID: 915412455}
   - component: {fileID: 915412454}
-  - component: {fileID: 915412457}
   m_Layer: 3
   m_Name: DEATH FLOOR
-  m_TagString: Untagged
+  m_TagString: DeathFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3693,7 +3696,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3776,19 +3779,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &915412457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 915412453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ecb666aa7f9b467d91501020cdbd06e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Level2
 --- !u!1001 &936796535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4280,7 +4270,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.01831454}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4291,7 +4281,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0848961, y: 0.37730056}
   m_EdgeRadius: 0
 --- !u!212 &1002129007
 SpriteRenderer:
@@ -4628,7 +4618,6 @@ GameObject:
   - component: {fileID: 1060647211}
   - component: {fileID: 1060647210}
   - component: {fileID: 1060647209}
-  - component: {fileID: 1060647212}
   m_Layer: 0
   m_Name: Square (12)
   m_TagString: Untagged
@@ -4729,19 +4718,6 @@ Transform:
   m_Father: {fileID: 608766079}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1060647212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060647208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ecb666aa7f9b467d91501020cdbd06e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Level2
 --- !u!4 &1067087129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 682254763786188052, guid: 06649edac94782d489e2481497165ce2, type: 3}
@@ -6899,7 +6875,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7e308fb336bcb4aa7b969d1bd1d113f0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.656
+  m_Volume: 0.132
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7880,7 +7856,6 @@ GameObject:
   - component: {fileID: 1848585194}
   - component: {fileID: 1848585193}
   - component: {fileID: 1848585192}
-  - component: {fileID: 1848585195}
   m_Layer: 0
   m_Name: Square (10)
   m_TagString: Untagged
@@ -7981,19 +7956,6 @@ Transform:
   m_Father: {fileID: 608766079}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1848585195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848585191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ecb666aa7f9b467d91501020cdbd06e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Level2
 --- !u!1 &1892936095
 GameObject:
   m_ObjectHideFlags: 0
