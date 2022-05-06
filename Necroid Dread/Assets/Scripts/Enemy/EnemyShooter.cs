@@ -140,14 +140,15 @@ public class EnemyShooter : MonoBehaviour
         yield return null;
     }
 
-    IEnumerator die() {
-        _audio.PlayOneShot(DeathSound);  
+    IEnumerator die()
+    {
+        _audio.PlayOneShot(DeathSound);
         cantDmg = true;
         _rigidbody.velocity = Vector2.zero;
         animator.SetTrigger("die");
         harmless = true;
         animator.SetTrigger("fade");
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(3f);
         Destroy(this.gameObject);
     }
 }

@@ -201,7 +201,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &845943589655888757
 MonoBehaviour:
@@ -227,7 +227,7 @@ MonoBehaviour:
   upgrade: 0
   final: 0
   wallSlidingSpeed: 3
-  xWallForce: 20
+  xWallForce: 150
   yWallForce: 15
   frontCheck: {fileID: 3650838198797716535}
   wallJumpButton: {fileID: 0}

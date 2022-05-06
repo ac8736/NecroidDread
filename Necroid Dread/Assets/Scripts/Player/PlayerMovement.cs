@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         }
         animator.SetFloat("speed", Mathf.Abs(horizontalSpeed));
 
-        if (isTouchingFront && !isGrounded && horizontalSpeed != 0)
+        if (isTouchingFront && !isGrounded)
         {
             wallSliding = true;
         }
@@ -79,8 +79,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (wallSliding && upgrade)
         {
-            wallJumps = 2;
-            if (joystick.Horizontal < 0)
+            numOfJumps = 0;
+            if (transform.localScale.x < 0)
             {
                 animator.SetBool("hanging", true);
             }
@@ -94,8 +94,11 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Vector3 targetVelocity = new Vector2(horizontalSpeed, _rigidbody.velocity.y);
-        _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+        if (!wallSliding)
+        {
+            Vector3 targetVelocity = new Vector2(horizontalSpeed, _rigidbody.velocity.y);
+            _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+        }
     }
     public void Jump()
     {
@@ -129,13 +132,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (upgrade)
         {
-            if (wallSliding && wallJumps > 0)
+            if (wallSliding)
             {
                 animator.SetBool("hanging", false);
                 animator.SetBool("hangingLeft", false);
                 animator.SetTrigger("jump");
-                _rigidbody.velocity = new Vector2(xWallForce * -horizontalSpeed, yWallForce);
-                --wallJumps;
+                _rigidbody.velocity = new Vector2(xWallForce * -transform.localScale.x, yWallForce);
+                wallJumps--;
             }
         }
     }

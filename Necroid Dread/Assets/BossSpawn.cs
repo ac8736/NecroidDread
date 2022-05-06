@@ -7,7 +7,8 @@ public class BossSpawn : MonoBehaviour
     public Transform[] spawnSpots;
     public GameObject ad;
     bool playerNear = false;
-    public int detection = 10;
+    //public int totalAds = 6;
+
     void Start()
     {
         StartCoroutine(spawn());
@@ -35,7 +36,7 @@ public class BossSpawn : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(8f);
             if (playerNear)
             {
                 for (int i = 0; i < spawnSpots.Length; i++)
