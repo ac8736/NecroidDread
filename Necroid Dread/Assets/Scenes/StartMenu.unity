@@ -677,8 +677,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 73
+  m_fontSizeBase: 73
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1025,7 +1025,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 40a0f2ad2489f4b75b9699b9a24c52e6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.578
+  m_Volume: 0.246
   m_Pitch: 1
   Loop: 1
   Mute: 0
