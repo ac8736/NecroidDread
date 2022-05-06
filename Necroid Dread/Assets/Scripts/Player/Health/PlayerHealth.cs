@@ -48,6 +48,8 @@ public class PlayerHealth : MonoBehaviour
         if (other.gameObject.CompareTag("MonsterBullet"))
         {
             TakeDamage(5);
+        }else if (other.gameObject.CompareTag("DeathFloor")){
+            TakeDamage(100);
         }
     }
     void TakeDamage(float damage)

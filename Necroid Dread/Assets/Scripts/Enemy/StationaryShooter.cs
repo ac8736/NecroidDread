@@ -91,13 +91,8 @@ public class StationaryShooter : MonoBehaviour
         canShoot = true;
         yield return null;
     }
-<<<<<<< Updated upstream
-    IEnumerator die()
-    {
-=======
     IEnumerator die() {
         _audio.PlayOneShot(DeathSound, 0.5f);  
->>>>>>> Stashed changes
         cantDmg = true;
         animator.SetTrigger("die");
         animator.SetTrigger("fade");
