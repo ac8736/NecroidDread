@@ -20,7 +20,8 @@ public class StationaryShooter : MonoBehaviour
     public AudioClip DeathSound;
     AudioSource _audio;
 
-    void Awake(){
+    void Awake()
+    {
         _audio = GetComponent<AudioSource>();
     }
     void Update()
@@ -91,13 +92,9 @@ public class StationaryShooter : MonoBehaviour
         canShoot = true;
         yield return null;
     }
-<<<<<<< Updated upstream
     IEnumerator die()
     {
-=======
-    IEnumerator die() {
-        _audio.PlayOneShot(DeathSound, 0.5f);  
->>>>>>> Stashed changes
+        _audio.PlayOneShot(DeathSound, 0.5f);
         cantDmg = true;
         animator.SetTrigger("die");
         animator.SetTrigger("fade");
