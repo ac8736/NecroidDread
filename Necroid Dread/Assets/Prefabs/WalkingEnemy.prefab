@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ba37674fbcbda64bb3e2db40c2c83ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolSpeed: -10
+  patrolSpeed: -13
   _rigidbody: {fileID: 682254763786188054}
   groundCheck: {fileID: 682254764042842449}
   wallCheck: {fileID: 682254763627256831}
@@ -276,7 +276,7 @@ MonoBehaviour:
   gun: {fileID: 682254762850847867}
   bullet: {fileID: 8804101465963388179, guid: b4c7b69d4745df141bf03fc29bf34e8a, type: 3}
   animator: {fileID: 682254763786188053}
-  health: 3
+  health: 5
   DeathSound: {fileID: 8300000, guid: 776e1e88b8efd47919ebafbae7acf782, type: 3}
 --- !u!82 &8755238067854109383
 AudioSource:
