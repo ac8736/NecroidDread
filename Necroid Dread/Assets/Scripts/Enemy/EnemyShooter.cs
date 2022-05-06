@@ -26,43 +26,59 @@ public class EnemyShooter : MonoBehaviour
     public int health = 3;
     bool cantDmg = false;
 
-    void Start() {
+    void Start()
+    {
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
     {
         RaycastHit2D hit = Physics2D.Raycast(eyes.transform.position, -sightDirection * range);
-        if (hit.collider != null && (!harmless)) {
-            if (hit.transform.tag == "Player" || hit.transform.tag == "Bullet") {
+        if (hit.collider != null && (!harmless))
+        {
+            if (hit.transform.tag == "Player" || hit.transform.tag == "Bullet")
+            {
                 foundPlayer = true;
-            } else {
+            }
+            else
+            {
                 foundPlayer = false;
             }
-        } else {
+        }
+        else
+        {
             foundPlayer = false;
         }
     }
 
-    private void FixedUpdate() {
-        if (foundPlayer) {
+    private void FixedUpdate()
+    {
+        if (foundPlayer)
+        {
             animator.SetBool("seePlayer", true);
             Attack();
-        } else if (!harmless) {
+        }
+        else if (!harmless)
+        {
             animator.SetBool("seePlayer", false);
             Patrol();
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        if (!other.collider.CompareTag("Player") && !other.collider.CompareTag("MonsterBullet")) {
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (!other.collider.CompareTag("Player") && !other.collider.CompareTag("MonsterBullet"))
+        {
             Flip();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Bullet")) {
-            if (!cantDmg) {
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            if (!cantDmg)
+            {
                 animator.SetTrigger("hit");
                 health--;
                 if (health <= 0)
@@ -71,52 +87,62 @@ public class EnemyShooter : MonoBehaviour
         }
     }
 
-    void Patrol() {
+    void Patrol()
+    {
         noGround = !Physics2D.OverlapCircle(groundCheck.position, 0.1f, platformLayer);
         hitWall = Physics2D.OverlapCircle(wallCheck.position, 0.1f, platformLayer);
-        if (noGround || hitWall) {
+        if (noGround || hitWall)
+        {
             Flip();
         }
         Vector3 targetVelocity = new Vector2(patrolSpeed, _rigidbody.velocity.y);
-       _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+        _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
     }
 
-    void Attack() {
+    void Attack()
+    {
         _rigidbody.velocity = Vector2.zero;
-        if (player.position.x < transform.position.x && transform.localScale.x < 0) {
+        if (player.position.x < transform.position.x && transform.localScale.x < 0)
+        {
             Flip();
         }
-        else if (player.position.x > transform.position.x && transform.localScale.x > 0) {
+        else if (player.position.x > transform.position.x && transform.localScale.x > 0)
+        {
             Flip();
         }
-        if (canShoot) {
+        if (canShoot)
+        {
             GameObject newBullet = Instantiate(bullet, gun.transform.position, Quaternion.identity);
             if (transform.localScale.x > 0)
                 newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-30, 0);
-            else 
+            else
                 newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(30, 0);
             canShoot = false;
             StartCoroutine(shootCD());
         }
     }
 
-    void Flip() {
-        transform.localScale =  new Vector2(transform.localScale.x * -1, transform.localScale.y);
+    void Flip()
+    {
+        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         patrolSpeed *= -1;
         sightDirection = -sightDirection;
     }
 
-    IEnumerator shootCD() {
+    IEnumerator shootCD()
+    {
         yield return new WaitForSeconds(0.8f);
         canShoot = true;
         yield return null;
     }
 
-    IEnumerator die() {
+    IEnumerator die()
+    {
         cantDmg = true;
         _rigidbody.velocity = Vector2.zero;
         animator.SetTrigger("die");
         harmless = true;
+        animator.SetTrigger("fade");
         yield return new WaitForSeconds(10f);
         Destroy(this.gameObject);
     }

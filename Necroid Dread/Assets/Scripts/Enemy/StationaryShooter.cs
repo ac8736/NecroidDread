@@ -19,32 +19,45 @@ public class StationaryShooter : MonoBehaviour
     void Update()
     {
         RaycastHit2D hit;
-        if (facingLeft) {
+        if (facingLeft)
+        {
             //Debug.DrawRay(eyes.transform.position, -sightDirection * range, Color.red);
             hit = Physics2D.Raycast(eyes.transform.position, -sightDirection * range);
         }
-        else {
+        else
+        {
             //Debug.DrawRay(eyes.transform.position, sightDirection * range, Color.red);
             hit = Physics2D.Raycast(eyes.transform.position, sightDirection * range);
         }
-        if (hit.collider != null && (!harmless)) {
-            if (hit.transform.tag == "Player" || hit.transform.tag == "Bullet") {
+        if (hit.collider != null && (!harmless))
+        {
+            if (hit.transform.tag == "Player" || hit.transform.tag == "Bullet")
+            {
                 foundPlayer = true;
-            } else {
+            }
+            else
+            {
                 foundPlayer = false;
             }
-        } else {
+        }
+        else
+        {
             foundPlayer = false;
         }
     }
-    private void FixedUpdate() {
-        if (foundPlayer) {
+    private void FixedUpdate()
+    {
+        if (foundPlayer)
+        {
             Attack();
         }
     }
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Bullet")) {
-            if (!cantDmg) {
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            if (!cantDmg)
+            {
                 animator.SetTrigger("hit");
                 health--;
                 if (health <= 0)
@@ -52,25 +65,30 @@ public class StationaryShooter : MonoBehaviour
             }
         }
     }
-    void Attack() {    
-        if (canShoot) {
+    void Attack()
+    {
+        if (canShoot)
+        {
             GameObject newBullet = Instantiate(bullet, gun.transform.position, Quaternion.identity);
-            if (facingLeft) 
+            if (facingLeft)
                 newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-15, 0);
-            else 
+            else
                 newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(15, 0);
             canShoot = false;
             StartCoroutine(shootCD());
         }
     }
-    IEnumerator shootCD() {
+    IEnumerator shootCD()
+    {
         yield return new WaitForSeconds(1.5f);
         canShoot = true;
         yield return null;
     }
-    IEnumerator die() {
+    IEnumerator die()
+    {
         cantDmg = true;
         animator.SetTrigger("die");
+        animator.SetTrigger("fade");
         harmless = true;
         yield return new WaitForSeconds(10f);
         Destroy(this.gameObject);
