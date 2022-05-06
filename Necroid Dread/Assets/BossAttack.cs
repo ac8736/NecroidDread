@@ -8,6 +8,7 @@ public class BossAttack : MonoBehaviour
     public Transform gun;
     bool playerNear = false;
     public int detection = 10;
+    public int shotLimit = 3;
 
     public AudioClip gunshot;
     AudioSource _audio;
@@ -48,8 +49,11 @@ public class BossAttack : MonoBehaviour
             yield return new WaitForSeconds(4);
             if (playerNear)
             {
-                 _audio.PlayOneShot(gunshot);
-                Instantiate(bullet, gun.position, gun.rotation);
+                for (int i = 0; i < shotLimit; i++) {
+                    _audio.PlayOneShot(gunshot);
+                    Instantiate(bullet, gun.position, gun.rotation);
+                    yield return new WaitForSeconds(0.5f);
+                }
             }
         }
     }

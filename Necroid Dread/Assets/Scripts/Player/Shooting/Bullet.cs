@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.tag.Contains("Enemy")) {
             Destroy(gameObject);
         }
-        else if (!other.gameObject.tag.Contains("Player") || !other.gameObject.tag.Contains("MonsterBullet")) {
+        else if (!other.gameObject.tag.Contains("Player")) {
             Destroy(gameObject);
         }
     }
