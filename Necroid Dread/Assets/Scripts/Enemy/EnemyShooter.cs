@@ -6,7 +6,7 @@ public class EnemyShooter : MonoBehaviour
 {
     private Vector3 m_Velocity = Vector3.zero;
     private float m_MovementSmoothing = .02f;
-    private int range = 8;
+    private int range = 6;
     private Vector2 sightDirection = Vector2.right;
     public float patrolSpeed;
     public Rigidbody2D _rigidbody;
@@ -37,7 +37,7 @@ public class EnemyShooter : MonoBehaviour
 
     void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(eyes.transform.position, -sightDirection * range);
+        RaycastHit2D hit = Physics2D.Raycast(eyes.transform.position, -sightDirection, range);
         if (hit.collider != null && (!harmless))
         {
             if (hit.transform.tag == "Player" || hit.transform.tag == "Bullet")
@@ -118,9 +118,9 @@ public class EnemyShooter : MonoBehaviour
         {
             GameObject newBullet = Instantiate(bullet, gun.transform.position, Quaternion.identity);
             if (transform.localScale.x > 0)
-                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-30, 0);
+                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-10, 0);
             else
-                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(30, 0);
+                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
             canShoot = false;
             StartCoroutine(shootCD());
         }
