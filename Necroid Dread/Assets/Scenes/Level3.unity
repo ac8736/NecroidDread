@@ -4050,6 +4050,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+--- !u!1 &805554210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5747320232403941357, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+  m_PrefabInstance: {fileID: 805554209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &805554211 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 265503655, guid: 836868de17144be42a3fca2920b98d09, type: 3}
@@ -4075,6 +4080,16 @@ MonoBehaviour:
 --- !u!1 &805554213 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 265503653, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+  m_PrefabInstance: {fileID: 805554209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &805554214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2453243391760872183, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+  m_PrefabInstance: {fileID: 805554209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &805554215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4544154318773562057, guid: 836868de17144be42a3fca2920b98d09, type: 3}
   m_PrefabInstance: {fileID: 805554209}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &834386643
@@ -8212,6 +8227,22 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1611251155}
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: hearts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: hearts.Array.data[0]
+      value: 
+      objectReference: {fileID: 805554215}
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: hearts.Array.data[1]
+      value: 
+      objectReference: {fileID: 805554214}
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: hearts.Array.data[2]
+      value: 
+      objectReference: {fileID: 805554210}
     - target: {fileID: 845943589655888757, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: joystick
       value: 
