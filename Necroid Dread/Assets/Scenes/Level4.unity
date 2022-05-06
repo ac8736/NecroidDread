@@ -537,7 +537,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 72
+  m_RootOrder: 67
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &72862985
 GameObject:
@@ -988,7 +988,6 @@ MonoBehaviour:
   - {fileID: 585990128}
   - {fileID: 25347522}
   ad: {fileID: 682254763786188051, guid: 06649edac94782d489e2481497165ce2, type: 3}
-  detection: 10
 --- !u!95 &108141430
 Animator:
   serializedVersion: 4
@@ -1127,17 +1126,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 265503653, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265503654, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 756.2917
+      objectReference: {fileID: 0}
     - target: {fileID: 265503654, guid: 836868de17144be42a3fca2920b98d09, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100.12
+      value: 44.005
       objectReference: {fileID: 0}
     - target: {fileID: 265503654, guid: 836868de17144be42a3fca2920b98d09, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 490.09
+      value: 473.77
       objectReference: {fileID: 0}
     - target: {fileID: 265503654, guid: 836868de17144be42a3fca2920b98d09, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -125
+      value: -96.942
+      objectReference: {fileID: 0}
+    - target: {fileID: 469143054, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469143054, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1500354010, guid: 836868de17144be42a3fca2920b98d09, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4916,7 +4931,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 71
+  m_RootOrder: 66
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1464214670
 MonoBehaviour:
