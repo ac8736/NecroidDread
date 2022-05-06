@@ -9,6 +9,7 @@ TagManager:
   - MonsterBullet
   - Bullet
   - DeathFloor
+  - Music
   layers:
   - Default
   - TransparentFX
