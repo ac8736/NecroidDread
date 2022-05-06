@@ -16,15 +16,17 @@ public class BossHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene("StartMenu");
+            SceneManager.LoadScene("YouWon");
         }
     }
     void TakeDamage(float damage)
     {
+        print("took dmg");
         currentHealth -= damage;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        print("collision");
         if (other.gameObject.CompareTag("Bullet"))
         {
             animator.SetTrigger("hurt");

@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossAttack : MonoBehaviour
+public class BossSpawn : MonoBehaviour
 {
-    public GameObject bullet;
-    public Transform gun;
+    public Transform[] spawnSpots;
+    public GameObject ad;
     bool playerNear = false;
     public int detection = 10;
     void Start()
     {
-        StartCoroutine(Attack());
+        StartCoroutine(spawn());
     }
-    private void Update()
+
+    void Update()
     {
-        //print(transform.position.y - GameObject.FindGameObjectWithTag("Player").transform.position.y);
-        //print(Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position));
         if (Mathf.Abs(transform.position.y - GameObject.FindGameObjectWithTag("Player").transform.position.y) < 15)
         {
             if (Mathf.Abs(transform.position.y - GameObject.FindGameObjectWithTag("Player").transform.position.y) < 50)
@@ -32,14 +31,17 @@ public class BossAttack : MonoBehaviour
             playerNear = false;
         }
     }
-    IEnumerator Attack()
+    IEnumerator spawn()
     {
         while (true)
         {
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(5);
             if (playerNear)
             {
-                Instantiate(bullet, gun.position, gun.rotation);
+                for (int i = 0; i < spawnSpots.Length; i++)
+                {
+                    Instantiate(ad, spawnSpots[i].position, spawnSpots[i].rotation);
+                }
             }
         }
     }
