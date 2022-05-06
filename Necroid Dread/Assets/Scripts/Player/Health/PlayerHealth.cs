@@ -48,7 +48,9 @@ public class PlayerHealth : MonoBehaviour
         if (other.gameObject.CompareTag("MonsterBullet"))
         {
             TakeDamage(5);
-        }else if (other.gameObject.CompareTag("DeathFloor")){
+        }
+        else if (other.gameObject.CompareTag("DeathFloor"))
+        {
             TakeDamage(100);
         }
     }
@@ -67,6 +69,8 @@ public class PlayerHealth : MonoBehaviour
             animator.SetTrigger("healthDmg");
             currentHealth -= damage;
             healthbar.SetHealth(currentHealth);
+            StopCoroutine(regenHealth());
+            StartCoroutine(regenHealth());
         }
     }
     public void obtainShield()
@@ -89,6 +93,19 @@ public class PlayerHealth : MonoBehaviour
             {
                 currentShield += 0.1f;
                 shieldbar.SetHealth(currentShield);
+            }
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+    IEnumerator regenHealth()
+    {
+        yield return new WaitForSeconds(5);
+        while (currentHealth < maxHealth)
+        {
+            if (currentHealth + 0.1f <= maxHealth)
+            {
+                currentHealth += 0.1f;
+                healthbar.SetHealth(currentHealth);
             }
             yield return new WaitForSeconds(0.05f);
         }
