@@ -5373,6 +5373,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &343557411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2453243391760872183, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+  m_PrefabInstance: {fileID: 9207659317906100061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &355862189
 GameObject:
   m_ObjectHideFlags: 0
@@ -12403,6 +12408,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3357d3b8dc6dd694aa5cc98997552e8f, type: 3}
+--- !u!1 &681711944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5747320232403941357, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+  m_PrefabInstance: {fileID: 9207659317906100061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &683689751
 GameObject:
   m_ObjectHideFlags: 0
@@ -23716,6 +23726,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1480589982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4544154318773562057, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+  m_PrefabInstance: {fileID: 9207659317906100061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1484715461
 GameObject:
   m_ObjectHideFlags: 0
@@ -34234,6 +34249,22 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1667068363}
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: hearts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: hearts.Array.data[0]
+      value: 
+      objectReference: {fileID: 1480589982}
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: hearts.Array.data[1]
+      value: 
+      objectReference: {fileID: 343557411}
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: hearts.Array.data[2]
+      value: 
+      objectReference: {fileID: 681711944}
     - target: {fileID: 845943589655888757, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: joystick
       value: 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PlayerHealth : MonoBehaviour
     bool shieldActive = false;
     public Transform spawnPoint;
     Animator animator;
+    public GameObject[] hearts;
+    private int lives = 3;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -32,6 +35,12 @@ public class PlayerHealth : MonoBehaviour
                 currentShield = maxShield;
                 shieldbar.SetMaxHealth(maxShield);
             }
+            lives--;
+            hearts[lives].SetActive(false);
+        }
+        if (lives == 0)
+        {
+            SceneManager.LoadScene("GameOver");
         }
     }
     private void OnCollisionEnter2D(Collision2D other)

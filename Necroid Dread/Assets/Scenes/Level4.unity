@@ -1156,6 +1156,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d77937ae63648540b41e2c1899f6bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &118986736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4544154318773562057, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+  m_PrefabInstance: {fileID: 118986732}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &118986737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2453243391760872183, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+  m_PrefabInstance: {fileID: 118986732}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &118986738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5747320232403941357, guid: 836868de17144be42a3fca2920b98d09, type: 3}
+  m_PrefabInstance: {fileID: 118986732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &140816777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,6 +1920,22 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 834008662}
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: hearts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: hearts.Array.data[0]
+      value: 
+      objectReference: {fileID: 118986736}
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: hearts.Array.data[1]
+      value: 
+      objectReference: {fileID: 118986737}
+    - target: {fileID: 49702844326559945, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: hearts.Array.data[2]
+      value: 
+      objectReference: {fileID: 118986738}
     - target: {fileID: 845943589655888757, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: joystick
       value: 
