@@ -72,24 +72,28 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("hangingLeft", false);
         }
 
-        if (wallJumps == 0 && isGrounded)
+        if (isGrounded)
         {
             wallJumps = 2;
         }
 
         if (wallSliding && upgrade)
         {
-            if (joystick.Horizontal < 0) {
+            wallJumps = 2;
+            if (joystick.Horizontal < 0)
+            {
                 animator.SetBool("hanging", true);
             }
-            else {
+            else
+            {
                 animator.SetBool("hangingLeft", true);
             }
             wallJumpButton.gameObject.SetActive(true);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, Mathf.Clamp(_rigidbody.velocity.y, -wallSlidingSpeed, float.MaxValue));
         }
     }
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         Vector3 targetVelocity = new Vector2(horizontalSpeed, _rigidbody.velocity.y);
         _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
     }
