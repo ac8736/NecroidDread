@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StationaryShooter : MonoBehaviour
 {
-    private float range = 0f;
+    private float range = 0.1f;
     private Vector2 sightDirection = Vector2.right;
     public GameObject eyes;
     public GameObject gun;

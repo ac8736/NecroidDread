@@ -21,6 +21,9 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.tag.Contains("Enemy")) {
             Destroy(gameObject);
         }
+        else {
+            Destroy(gameObject);
+        }
     }
     IEnumerator DestroyBullet()
     {
