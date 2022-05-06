@@ -2384,6 +2384,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 9056265188840540880, guid: 48cf92da733e0a9419c81d589d0323c4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48cf92da733e0a9419c81d589d0323c4, type: 3}
 --- !u!1 &624767754
@@ -7037,27 +7041,13 @@ GameObject:
   - component: {fileID: 2050089305}
   - component: {fileID: 2050089304}
   - component: {fileID: 2050089303}
-  - component: {fileID: 2050089302}
   m_Layer: 3
   m_Name: DEATH FLOOR
-  m_TagString: Untagged
+  m_TagString: DeathFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2050089302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050089301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ecb666aa7f9b467d91501020cdbd06e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Level4
 --- !u!61 &2050089303
 BoxCollider2D:
   m_ObjectHideFlags: 0
