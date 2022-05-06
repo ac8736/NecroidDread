@@ -25,10 +25,14 @@ public class EnemyShooter : MonoBehaviour
     public Animator animator;
     public int health = 3;
     bool cantDmg = false;
+    public AudioClip DeathSound;
+    AudioSource _audio;
+
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        _audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -136,8 +140,13 @@ public class EnemyShooter : MonoBehaviour
         yield return null;
     }
 
+<<<<<<< Updated upstream
     IEnumerator die()
     {
+=======
+    IEnumerator die() {
+        _audio.PlayOneShot(DeathSound);  
+>>>>>>> Stashed changes
         cantDmg = true;
         _rigidbody.velocity = Vector2.zero;
         animator.SetTrigger("die");
