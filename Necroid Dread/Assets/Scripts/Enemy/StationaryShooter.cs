@@ -72,7 +72,7 @@ public class StationaryShooter : MonoBehaviour
         cantDmg = true;
         animator.SetTrigger("die");
         harmless = true;
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(10f);
         Destroy(this.gameObject);
     }
 }
