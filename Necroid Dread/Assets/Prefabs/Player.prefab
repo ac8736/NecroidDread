@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 845943589655888762}
   - component: {fileID: 845943589655888763}
   - component: {fileID: 845943589655888757}
-  - component: {fileID: 845943589655888756}
   - component: {fileID: 845943589655888759}
   - component: {fileID: 845943589655888758}
   - component: {fileID: 49702844326559945}
@@ -169,7 +168,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.082619846}
+  m_Offset: {x: 0, y: 0.024934828}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -180,7 +179,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6666666, y: 2.5014272}
+  m_Size: {x: 1.6666666, y: 2.5776978}
   m_EdgeRadius: 0
 --- !u!50 &845943589655888763
 Rigidbody2D:
@@ -231,32 +230,6 @@ MonoBehaviour:
   yWallForce: 15
   frontCheck: {fileID: 3650838198797716535}
   wallJumpButton: {fileID: 0}
---- !u!61 &845943589655888756
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845943589655888766}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: a1c3382d5a65543b4a15764d792b2450, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.30045033, y: -0.6584648}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6666666, y: 2.6666667}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.7653179, y: 1.3540466}
-  m_EdgeRadius: 0
 --- !u!95 &845943589655888759
 Animator:
   serializedVersion: 4
@@ -304,8 +277,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
+  maxShield: 30
+  currentShield: 0
   currentHealth: 0
   healthbar: {fileID: 0}
+  shieldbar: {fileID: 0}
+  shieldUI: {fileID: 0}
 --- !u!1 &6115918133790723463
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6115918133790723463}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.98, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

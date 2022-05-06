@@ -136,7 +136,7 @@ TextureImporter:
         width: 74
         height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,12 +152,12 @@ TextureImporter:
       name: Bodies_1
       rect:
         serializedVersion: 2
-        x: 88
-        y: 135
-        width: 37
-        height: 52
+        x: 82
+        y: 136
+        width: 43
+        height: 51
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,10 +175,10 @@ TextureImporter:
         serializedVersion: 2
         x: 140
         y: 138
-        width: 49
+        width: 51
         height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,10 +196,10 @@ TextureImporter:
         serializedVersion: 2
         x: 18
         y: 113
-        width: 32
+        width: 30
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,7 +220,7 @@ TextureImporter:
         width: 32
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,10 +238,10 @@ TextureImporter:
         serializedVersion: 2
         x: 138
         y: 84
-        width: 52
+        width: 53
         height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,12 +257,12 @@ TextureImporter:
       name: Bodies_6
       rect:
         serializedVersion: 2
-        x: 142
-        y: 52
-        width: 38
-        height: 21
+        x: 6
+        y: 88
+        width: 129
+        height: 23
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,12 +278,12 @@ TextureImporter:
       name: Bodies_7
       rect:
         serializedVersion: 2
-        x: 137
-        y: 18
-        width: 43
-        height: 25
+        x: 5
+        y: 25
+        width: 46
+        height: 58
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -291,6 +291,111 @@ TextureImporter:
       bones: []
       spriteID: a762e2f7cbb6d3f478f9d4b5afe2346c
       internalID: 1115133831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bodies_8
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 74
+        width: 64
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b07190be1be5347915f3e76fa85fbf
+      internalID: -1167285234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bodies_9
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 55
+        width: 74
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd16a612076e8ac44ab6986283347e45
+      internalID: -1427445825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bodies_10
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 52
+        width: 38
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7617644d0b1de34b8adb07cd69f24be
+      internalID: -2045873052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bodies_11
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 2
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7d2a5ff183a734e987fca75f70cb17
+      internalID: 294740228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bodies_12
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 18
+        width: 43
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67b3ed8a4f9a4644a995a98f94a2756
+      internalID: 26627742
       vertices: []
       indices: 
       edges: []
@@ -312,8 +417,13 @@ TextureImporter:
       Bodies_1: -587000771
       Bodies_4: -1200290157
       Bodies_6: -182773053
+      Bodies_10: -2045873052
       Bodies_3: -1521886692
+      Bodies_11: 294740228
       Bodies_5: -780696791
+      Bodies_8: -1167285234
+      Bodies_9: -1427445825
+      Bodies_12: 26627742
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

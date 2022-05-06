@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StationaryShooter : MonoBehaviour
 {
-    private int range = 10;
+    private float range = 0f;
     private Vector2 sightDirection = Vector2.right;
     public GameObject eyes;
     public GameObject gun;
@@ -12,7 +12,7 @@ public class StationaryShooter : MonoBehaviour
     public GameObject bullet;
     private bool canShoot = true;
     public Animator animator;
-    public int health = 3;
+    public int health = 4;
     bool cantDmg = false;
     public bool facingLeft = false;
     void Update()
@@ -55,15 +55,15 @@ public class StationaryShooter : MonoBehaviour
         if (canShoot) {
             GameObject newBullet = Instantiate(bullet, gun.transform.position, Quaternion.identity);
             if (facingLeft) 
-                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-30, 0);
+                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-15, 0);
             else 
-                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(30, 0);
+                newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(15, 0);
             canShoot = false;
             StartCoroutine(shootCD());
         }
     }
     IEnumerator shootCD() {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1.5f);
         canShoot = true;
         yield return null;
     }

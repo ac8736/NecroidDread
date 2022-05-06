@@ -1276,6 +1276,14 @@ PrefabInstance:
       propertyPath: shieldbar
       value: 
       objectReference: {fileID: 481339353}
+    - target: {fileID: 845943589655888756, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3231214
+      objectReference: {fileID: 0}
+    - target: {fileID: 845943589655888756, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.6430022
+      objectReference: {fileID: 0}
     - target: {fileID: 845943589655888757, guid: b5bfc3446a5e69c45b072ac8c800a917, type: 3}
       propertyPath: joystick
       value: 
