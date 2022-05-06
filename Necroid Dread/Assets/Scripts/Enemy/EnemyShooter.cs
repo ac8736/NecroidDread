@@ -148,7 +148,7 @@ public class EnemyShooter : MonoBehaviour
         animator.SetTrigger("die");
         harmless = true;
         animator.SetTrigger("fade");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
         Destroy(this.gameObject);
     }
 }
