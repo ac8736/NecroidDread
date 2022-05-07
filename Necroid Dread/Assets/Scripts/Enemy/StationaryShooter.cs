@@ -102,7 +102,8 @@ public class StationaryShooter : MonoBehaviour
         animator.SetTrigger("die");
         animator.SetTrigger("fade");
         harmless = true;
+        gameObject.tag = "Dead";
         yield return new WaitForSeconds(3f);
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

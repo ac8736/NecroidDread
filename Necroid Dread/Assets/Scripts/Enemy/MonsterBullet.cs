@@ -11,15 +11,9 @@ public class MonsterBullet : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        StopAllCoroutines();
-        Destroy(this.gameObject);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Bullet"))
-        {
-            Destroy(gameObject);
+        if (!other.gameObject.CompareTag("Dead")) {
+            StopAllCoroutines();
+            Destroy(this.gameObject);
         }
     }
 

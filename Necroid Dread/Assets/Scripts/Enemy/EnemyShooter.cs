@@ -146,10 +146,13 @@ public class EnemyShooter : MonoBehaviour
     {
         _audio.PlayOneShot(DeathSound);
         cantDmg = true;
+        harmless = true;
+        
         _rigidbody.velocity = Vector2.zero;
         animator.SetTrigger("die");
-        harmless = true;
         animator.SetTrigger("fade");
+        gameObject.tag = "Dead";
+
         yield return new WaitForSeconds(3f);
         Destroy(this.gameObject);
     }

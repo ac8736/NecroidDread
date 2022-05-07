@@ -18,7 +18,7 @@ public class BossSpawn : MonoBehaviour
     {
         if (Mathf.Abs(transform.position.y - GameObject.FindGameObjectWithTag("Player").transform.position.y) < 15)
         {
-            if (Mathf.Abs(transform.position.y - GameObject.FindGameObjectWithTag("Player").transform.position.y) < 50)
+            if (Mathf.Abs(transform.position.y - GameObject.FindGameObjectWithTag("Player").transform.position.y) < 10)
             {
                 playerNear = true;
             }

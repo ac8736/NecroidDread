@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - DeathFloor
   - Music
+  - Dead
   layers:
   - Default
   - TransparentFX
