@@ -36,6 +36,10 @@ public class BossAttack : MonoBehaviour
             {
                 playerNear = false;
             }
+            if (this.GetComponent<BossHealth>().currentHealth <= 20) {
+                print("Boss Enraged!");
+                shotLimit = 5;
+            }
         }
         else
         {

@@ -6,7 +6,7 @@ public class EnemyShooter : MonoBehaviour
 {
     private Vector3 m_Velocity = Vector3.zero;
     private float m_MovementSmoothing = .04f;
-    private int range = 6;
+    public int range = 7;
     private Vector2 sightDirection = Vector2.right;
     public float patrolSpeed;
     public Rigidbody2D _rigidbody;
