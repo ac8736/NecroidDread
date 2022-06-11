@@ -4,6 +4,7 @@
 #### Contributors: Soji Adenusi (https://github.com/sojiadenusi), Nihal Rahman (https://github.com/Nihal-Rahman), and James Sun (https://github.com/SunJames568)
 
 #### To play the current game build: https://nihal-rahman10.itch.io/necroid-dread, download the iOS build and install into iPhone using Xcode.
+#### This repository contains the source code and assets. Can be opened in the Unity Game Engine using version 2021.3.0f1.
 
 All assets that were imported from the Unity Asset Store and attributed to in the Itch.io page.
 Audio sources are also attributed to in the Itch.io page.
